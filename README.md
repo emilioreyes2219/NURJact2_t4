@@ -1,39 +1,22 @@
 # Aplicación Spring Boot 
 Nunez Reyes Jorge Emilio
 
-Se realizaron los controladores utilizando los conocimientos aprendidos en el video
-Curso completo de Java Spring Boot desde cero
-https://youtube.com/playlist?list=PL2Z95CSZ1N4EWw14HZ0NFD3woFcn6uiCm
+## 🛠️ Endpoints y Vistas del Proyecto
 
+### 1. Vistas Thymeleaf (MVC)
+* **Lista de Empleados (`th:each`):** `http://localhost:8080/detalles_info`
+* **Formulario de Registro (`@ModelAttribute`):** `http://localhost:8080/form` *(Envía datos por POST a `/guardar`)*
 
+### 2. Endpoints REST (JSON)
+* **DTO:** `http://localhost:8080/api/detalles_info2`
+* **Query Parameters (`@RequestParam`):**
+  * Detalle: `http://localhost:8080/api/parametros/detalle?informacion=TextoPrueba`
+  * Saludo: `http://localhost:8080/api/parametros/saludo?nombre=Jorge`
+* **Path Variables (`@PathVariable`):**
+  * Mensaje: `http://localhost:8080/api/variable/pagina1/MiMensaje`
+  * ID Empleado: `http://localhost:8080/api/variable/empleado/1`
+* **Propiedades personalizadas (`@Value`):** `http://localhost:8080/api/variable/valores`
+* **Petición POST (`@RequestBody`):** `http://localhost:8080/api/variable/solicitud` *(Probar en Postman/Bruno enviando un JSON de Empleado)*
 
-## 🛠️ Endpoints Disponibles
-
-La aplicación cuenta con controladores REST configurados para devolver la información de la instancia y los datos del perfil académico:
-
-1. **Información de la Instancia**
-   * **Ruta:** `/mi-instancia`
-   * **Método:** `GET`
-   * **Descripción:** Devuelve el mensaje de actividad y el autor de la aplicación.
-
-2. **Perfil Académico**
-   * **Ruta:** `/perfil`
-   * **Método:** `GET`
-   * **Descripción:** Devuelve en formato JSON los datos del estudiante:
-     * **Nombre:** Jorge Emilio
-     * **Carrera:** Ingeniería en Sistemas
-     * **Semestre:** Noveno
-     * **Institución:** Instituto Tecnológico de Oaxaca
-
-3. **Estado del Servidor**
-   * **Ruta:** `/estado`
-   * **Método:** `GET`
-   * **Descripción:** Confirma que el servidor está respondiendo correctamente.
-
----
-
-Instancia: http://13.140.209.186:8083/mi-instancia
-
-Perfil: http://13.140.209.186:8083/perfil
-
-Estado: http://13.140.209.186:8083/estado
+### 3. Identificación en el VPS
+* **Instancia Activa:** `http://localhost:8080/mi-instancia` *(Ajustar al puerto `8085` en el VPS)*
